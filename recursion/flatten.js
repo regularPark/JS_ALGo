@@ -1,6 +1,5 @@
-function flatten(nums) {
-    console.log(nums[0].length)
-    console.log(nums[3])
+function flatten(arr) {
+    return (arr.reduce((result, x) => result.concat(Array.isArray(x) ? flatten(x) : x), []))
 }
 
 flatten([1, 2, 3, [4, 5]]) // [1, 2, 3, 4, 5]
