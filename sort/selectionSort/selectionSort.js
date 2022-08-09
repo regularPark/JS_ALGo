@@ -18,3 +18,6 @@ function selectionSort(arr) {
 }
 
 selectionSort([5, 3, 1, 2, 4])
+
+
+// O(n^2)
