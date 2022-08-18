@@ -132,19 +132,22 @@ class DoublyLinkedList {
         }
         console.log(arr);
     }
-    // reverse() {
-    //     var node = this.head;
-    //     this.head = this.tail;
-    //     this.tail = node;
-    //     var next;
-    //     var prev = null;
-    //     for (var i = 0; i < this.length; i++) {
-    //         next = node.next;
-    //         node.next = prev;
-    //         prev = node;
-    //         node = next;
-    //     }
-    // }
+    reverse() {
+        if (!this.head) return null;
+        if (this.length === 1) return this;
+
+        this.tail = this.head.prev;
+        let current;
+
+        while (true) {
+            if (!this.head.next) break;
+            current = this.head.next;
+            this.tail = this.head;
+            this.tail.next = this.head.prev;
+            this.tail.prev = this.head.next;
+            this.head = current;
+        }
+    }
 }
 
 let list = new DoublyLinkedList();
